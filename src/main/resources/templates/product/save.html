@@ -27,11 +27,11 @@
 			</div>
 			<div class="form-group">
 				<label for="stock">Cantidad</label>
-				<input type="number" step="any" min=0 class="form-control" id="stock" name="stock" th:value=${kardex.stock}>
+				<input min="1" type="number" step="any" class="form-control" id="stock" name="stock" th:value=${kardex.stock}>
 			</div>
 			<div class="form-group">
 				<label for="unitPrice">Precio Unitario</label>
-				<input type="number" step="any" min=0 class="form-control" id="unitPrice" name="unitPrice" th:value=${kardex.unitPrice}>
+				<input min="1" type="number" step="any" class="form-control" id="unitPrice" name="unitPrice" th:value=${kardex.unitPrice}>
 			</div>
 			<button type="submit" class="btn btn-success">Guardar</button>
 		</form>

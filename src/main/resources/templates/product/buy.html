@@ -8,25 +8,29 @@
 <body>
 	<div class="container">
 		<br>
-		<h2>Realizar Venta</h2>
+		<h2>Ingresar Productos</h2>
 		<div class="card text-center">
   			<div class="card-header">
     			<h5 class="card-title" th:text="${product.name}"></h5>
   			</div>
   			<div class="card-body">
-    			<form action="#" th:action="@{/sale}" class="form-group" method="POST">
+    			<form action="#" th:action="@{/buy}" class="form-group" method="POST">
     				<div class="form-group">
 						<input type="hidden" class="form-control" id="id" name="id" th:value=${product.id}>
 					</div>
 					<div class="form-group">
-						<label for="stock">Numero de unidades</label>
-						<input min="1" th:attr="max=${kardex.stockInventory}" type="number" step=any class="form-control" id="stock" name="stock" th:value=${kardex.stock} required="required">
+						<label for="stock">Numero de unidades a Ingresar</label>
+						<input min="1" type="number" step=any class="form-control" id="stock" name="stock" th:value=${kardex.stock} required="required">
+					</div>
+					<div class="form-group">
+						<label for="stock">Precio Unitario al que se Comprarón</label>
+						<input min="1" type="number" step=any class="form-control" id="unitPrice" name="unitPrice" th:value=${kardex.unitPrice} required="required">
 					</div>
 					<div class="form-group">
 						<label for="description">Descripción</label>
 						<input type="text" class="form-control" id="description" name="description" th:value=${bill.description}>
 					</div>
-					<button type="submit" class="btn btn-success">Realizar Venta</button>
+					<button type="submit" class="btn btn-success">Ingresar Producto</button>
 				</form>
   			</div>
 		</div>

@@ -37,7 +37,7 @@ public class KardexServiceImpl extends GenericServiceImpl<Kardex, Long> implemen
         double newUnitPrice = 0;
         if (lastKardex != null) {
             if (type.equals("Buy")) {
-                newUnitPrice = (lastKardex.getTotalPrice() + totalPrice) / (stock);
+                newUnitPrice = (lastKardex.getTotalPriceInventory() + totalPrice) / (stock);
             } else if (type.equals("Sale")) {
                 newUnitPrice = lastKardex.getUnitPrice();
             }
@@ -62,12 +62,17 @@ public class KardexServiceImpl extends GenericServiceImpl<Kardex, Long> implemen
     }
 
     @Override
-    public double calculateNewStock(Long productId, double stock) {
+    public double calculateNewStock(Long productId, double stock, String type) {
         double newStock = 0;
         Kardex lastKardex = this.getLastKardex(productId);
 
         if (lastKardex != null) {
-            newStock = lastKardex.getStockInventory() - stock;
+            if (type.equals("Sale")) {
+                newStock = lastKardex.getStockInventory() - stock;
+            } else {
+                newStock = lastKardex.getStockInventory() + stock;
+            }
+
         }
         return newStock;
     }

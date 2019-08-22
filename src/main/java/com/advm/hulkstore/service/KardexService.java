@@ -11,7 +11,7 @@ public interface KardexService extends GenericService<Kardex, Long> {
 
     double calculateNewUnitPrice(Long productId, double stock, double totalPrice, String type);
     
-    double calculateNewStock(Long productId, double stock);
+    double calculateNewStock(Long productId, double stock, String type);
     
     Kardex getLastKardex(Long productId);
     
