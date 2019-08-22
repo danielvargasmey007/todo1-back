@@ -1,6 +1,7 @@
 package com.advm.hulkstore.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -94,6 +95,8 @@ public class Bill implements Serializable {
 
     @PrePersist
     public void prePersist() {
+        this.products = new ArrayList<Product>();
+        this.kardexs = new ArrayList<Kardex>();
         this.date = new Date();
     }
 

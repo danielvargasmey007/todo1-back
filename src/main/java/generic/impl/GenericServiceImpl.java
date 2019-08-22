@@ -4,12 +4,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import generic.GenericService;
 
 @Service
+@Transactional
 public abstract class GenericServiceImpl<T, ID extends Serializable> implements GenericService<T, ID> {
 
     @Override

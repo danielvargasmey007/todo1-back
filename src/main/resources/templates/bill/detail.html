@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Detalle de Facturación</title>
+<link rel="stylesheet" href="../../static/css/bootstrap.css"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<h2 th:if="${bill == null}">¡Oops! No pudimos encontrar tu
+			factura</h2>
+		<div th:if="${bill != null}">
+			<h2>Detalle de Facturación</h2>
+			<br>
+			<div class="card text-center">
+				<div class="card-header">
+					<h5 class="card-title" th:text="${bill.id}">Factura Numero:</h5>
+				</div>
+				<div class="card-body">
+					<div class="form-group">
+						<label class="h5"  for="stock">Tipo:</label>
+						<p class="card-text" th:text="${bill.type}"></p>
+					</div>
+					<div class="form-group">
+						<label class="h5"  for="stock">Fecha:</label>
+						<p class="card-text" th:text="${bill.date}"></p>
+					</div>
+					<div class="form-group">
+						<label class="h5"  for="stock">Descripción:</label>
+						<p class="card-text" th:text="${bill.description}"></p>
+					</div>
+				</div>
+				<div th:if="${bill.products != null}" class="card-footer text-muted">
+					<table th:if="${!bill.products.isEmpty()}" class="table">
+						<thead>
+							<tr>
+								<th>Productos Facturados</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="product: ${bill.products}">
+								<td><a th:text="${product.id}"
+									th:href="@{/detail/{id}(id=${product.id})}"></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

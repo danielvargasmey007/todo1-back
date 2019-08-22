@@ -10,27 +10,23 @@
 		<br>
 			<h2 th:if="${products.isEmpty()}">No hay productos</h2>
 			<div>
-				<h2>Productos</h2>
+				<h2 th:if="${!products.isEmpty()}" >Productos</h2>
 				<div>
 					<a href="/save/init" class="btn btn-primary">Agregar</a>
 				</div>
 				<br>
 				<table th:if="${!products.isEmpty()}" class="table">
-					<thead>
-						<tr>
-							<th>Nombre</th>
-							<th>Tipo</th>
-							<th>Descripción</th>
-							<th>Acciones</th>
-						</tr>
-					</thead>
 					<tbody>
 						<tr th:each="product: ${products}">
 							<td th:text="${product.name}">
-							<td th:text="${product.type}">
-							<td th:text="${product.description}">
 							<td>
-								<a class="btn btn-info" th:href="@{/save/{id}(id=${product.id})}">Editar</a>
+								<a class="btn btn-outline-success btn-sm" th:href="@{/sale/{id}(id=${product.id})}">Venta</a>
+							</td>
+							<td>
+								<a class="btn btn-outline-primary btn-sm" th:href="@{/save/{id}(id=${product.id})}">Compra</a>
+							</td>
+							<td>
+								<a class="btn btn-outline-dark btn-sm" th:href="@{/detail/{id}(id=${product.id})}">Ver</a>
 							</td>
 						</tr>
 					</tbody>

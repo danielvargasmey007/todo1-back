@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Detalle de Producto</title>
+<link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="container">
+		<br>
+			<h2 th:if="${product == null}">¡Oops! No pudimos encontrar tu producto</h2>
+			<div th:if="${product != null}">
+				<h2>Detalle de Producto</h2>
+				<br>
+				<div class="card text-center">
+  					<div class="card-header">
+    					<h5 class="card-title" th:text="${product.name}"></h5>
+  					</div>
+  					<div class="card-body">
+    					<p class="card-text" th:text="${product.description}"></p>
+  					</div>
+  					<div class="card-footer text-muted">
+    					<table th:if="${!kardexs.isEmpty()}" class="table">
+    						<thead>
+    							<tr>
+    								<th>Fecha</th>
+    								<th>Tipo</th>
+    								<th>Stock Operacion</th>
+    								<th>Stock Inventario</th>
+    								<th>Precio Unitario Operación</th>
+    								<th>Precio Unitario Inventario</th>
+    								<th>Precio Total Operación</th>
+    								<th>Precio Total Inventario</th>
+    								<th>Número de Factura</th>
+    							</tr>
+    						</thead>
+							<tbody>
+								<tr th:each="kardex: ${kardexs}">
+									<td th:text="${kardex.date}">
+									<td th:text="${kardex.type}">
+									<td th:text="${kardex.stock}">
+									<td th:text="${kardex.stockInventory}">
+									<td th:text="${kardex.unitPrice}">
+									<td th:text="${kardex.unitPriceInventory}">
+									<td th:text="${kardex.totalPrice}">
+									<td th:text="${kardex.totalPriceInventory}">
+									<td>
+										<a th:if="${kardex.bill != null}" th:text="${kardex.bill.id}" th:href="@{/bill/detail/{id}(id=${kardex.bill.id})}"></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+  					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
