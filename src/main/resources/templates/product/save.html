@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Productos</title>
+<link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<h2>Agregar producto</h2>
+		<form action="#" th:action="@{/save}" class="form-group" method="POST">
+			<div class="form-group">
+				<input type="hidden" class="form-control" id="id" name="id" th:value=${product.id}>
+			</div>
+			<div class="form-group">
+				<label for="name">Nombre</label>
+				<input type="text" class="form-control" id="name" name="name" th:value=${product.name}>
+			</div>
+			<div class="form-group">
+				<label for="type">Tipo</label>
+				<input type="text" class="form-control" id="type" name="type" th:value=${product.type}>
+			</div>
+			<div class="form-group">
+				<label for="description">Descripción</label>
+				<input type="text" class="form-control" id="description" name="description" th:value=${product.description}>
+			</div>
+			<div class="form-group">
+				<label for="stock">Cantidad</label>
+				<input type="number" step="any" min=0 class="form-control" id="stock" name="stock" th:value=${kardex.stock}>
+			</div>
+			<div class="form-group">
+				<label for="unitPrice">Precio Unitario</label>
+				<input type="number" step="any" min=0 class="form-control" id="unitPrice" name="unitPrice" th:value=${kardex.unitPrice}>
+			</div>
+			<button type="submit" class="btn btn-success">Guardar</button>
+		</form>
+	</div>
+</body>
+</html>
