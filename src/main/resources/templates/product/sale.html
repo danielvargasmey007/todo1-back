@@ -15,7 +15,8 @@
 		</nav>
 		<br>
 		<h2>Realizar Venta</h2>
-		<div class="card text-center">
+		<h2 th:if="${kardex.stockInventory <= 0}">¡Oops! Este producto esta agotado</h2>
+		<div th:if="${kardex.stockInventory > 0}" class="card text-center">
   			<div class="card-header">
     			<h5 class="card-title" th:text="${product.name}"></h5>
   			</div>

@@ -1,5 +1,7 @@
 package com.advm.hulkstore.service.impl;
 
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +52,9 @@ public class KardexServiceImpl extends GenericServiceImpl<Kardex, Long> implemen
     @Override
     public Kardex getLastKardex(Long productId) {
         List<Kardex> kardexs = this.getAllKardex(productId);
-        Kardex lastKardex = kardexs.get(0);
+
+        final Comparator<Kardex> comp = (p1, p2) -> Long.compare(p1.getId(), p2.getId());
+        Kardex lastKardex = kardexs.stream().max(comp).get();
 
         return lastKardex;
     }
