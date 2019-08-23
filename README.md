@@ -34,12 +34,21 @@
 	![](image/p2.png)
 	
 	Cada uno de los items de esa estructura significan:
+
 **Fecha:** fecha en la que se realizo la operación
+
 **Tipo:** Buy(si se estan ingresando productos al sistema), Sale(si se esta realizando una venta de productos), Existencia(primer registro con los datos iniciales de un producto).
+
 **Stock Operación**: Corresponse a la cantidad que se esta manipulando en esa operación(ej: si esta vendiendo 4 articulos, el **Stock Operación** será igual a 4).
+
 **Precio Unitario Operacion:** Corresponse al precio unitario del articulo que se esta manipulando en esa operación(ej: si esta vendiendo un articulo cuyo precio unitario es 10, el **Precio Unitario Operacion:** será igual a 10).
+
 **Precio Total Operación:** Corresponde al producto de **Precio Unitario Operacion** * **Stock Operación**.
+
 **Stock Inventario**: Corresponse al numero de unidades total que se tiene registrada de ese articulo.
+
 **Precio Unitario Inventario:** Corresponse precio unitario del articulo como tal.
+
 **Precio Total Inevntario:** Corresponde al producto de **Precio Unitario Inevntario** * **Stock Inventario**
+
 **Número de Factura:** Corresponse al numero de la factura asociada a ese movimiento.
