@@ -32,10 +32,10 @@
     								<th>Fecha</th>
     								<th>Tipo</th>
     								<th>Stock Operacion</th>
-    								<th>Stock Inventario</th>
     								<th>Precio Unitario Operación</th>
+									<th>Precio Total Operación</th>
+									<th>Stock Inventario</th>
     								<th>Precio Unitario Inventario</th>
-    								<th>Precio Total Operación</th>
     								<th>Precio Total Inventario</th>
     								<th>Número de Factura</th>
     							</tr>
@@ -45,10 +45,10 @@
 									<td th:text="${kardex.date}">
 									<td th:text="${kardex.type}">
 									<td th:text="${kardex.stock}">
-									<td th:text="${kardex.stockInventory}">
 									<td th:text="${kardex.unitPrice}">
-									<td th:text="${kardex.unitPriceInventory}">
 									<td th:text="${kardex.totalPrice}">
+									<td th:text="${kardex.stockInventory}">
+									<td th:text="${kardex.unitPriceInventory}">
 									<td th:text="${kardex.totalPriceInventory}">
 									<td>
 										<a th:if="${kardex.bill != null}" th:text="${kardex.bill.id}" th:href="@{/bill/detail/{id}(id=${kardex.bill.id})}"></a>
