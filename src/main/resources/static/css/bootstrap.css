@@ -41,6 +41,19 @@
   box-sizing: border-box;
 }
 
+.bgn {
+	border-radius: 10px;
+}
+
+.bgn-text {
+	color: #FFF;
+	font-weight: bold;
+}
+
+.a-text {
+	font-weight: bold;	
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;

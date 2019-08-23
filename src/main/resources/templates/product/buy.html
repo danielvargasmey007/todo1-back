@@ -7,6 +7,12 @@
 </head>
 <body>
 	<div class="container">
+		<nav class="navbar navbar-dark bg-primary bgn">
+  			<a class="navbar-brand bgn-text" href="/">
+    			<img src="https://informacion.todo1services.com/hubfs/Todo_February2019%20/images/t1-newlogo-white.png" width="60" height="35" class="d-inline-block align-top" alt="">
+    			Kardex Todo1
+  			</a>
+		</nav>
 		<br>
 		<h2>Ingresar Productos</h2>
 		<div class="card text-center">
@@ -23,14 +29,14 @@
 						<input min="1" type="number" step=any class="form-control" id="stock" name="stock" th:value=${kardex.stock} required="required">
 					</div>
 					<div class="form-group">
-						<label for="stock">Precio Unitario al que se Comprarón</label>
+						<label for="stock">Precio Unitario</label>
 						<input min="1" type="number" step=any class="form-control" id="unitPrice" name="unitPrice" th:value=${kardex.unitPrice} required="required">
 					</div>
 					<div class="form-group">
 						<label for="description">Descripción</label>
-						<input type="text" class="form-control" id="description" name="description" th:value=${bill.description}>
+						<input type="text" class="form-control" id="description" name="description" th:value=${bill.description} placeholder="¿Quien es el Vendedor? ¿Quien es el Comprador?">
 					</div>
-					<button type="submit" class="btn btn-success">Ingresar Producto</button>
+					<button type="submit" class="btn btn-primary">Ingresar Producto</button>
 				</form>
   			</div>
 		</div>

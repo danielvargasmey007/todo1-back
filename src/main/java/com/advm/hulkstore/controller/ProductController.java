@@ -6,7 +6,6 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -83,7 +82,9 @@ public class ProductController {
         if (id != null) {
             Product product = productService.get(id);
             model.addAttribute("product", product);
-            model.addAttribute("kardex", new Kardex());
+            Kardex kardex = new Kardex();
+            kardex.setStockInventory(kardexService.getLastKardex(id).getStockInventory());
+            model.addAttribute("kardex", kardex);
             model.addAttribute("bill", new Bill());
         }
         return "product/sale";
@@ -178,14 +179,6 @@ public class ProductController {
             productService.save(product);
 
         }
-
-        return "redirect:/";
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public String delete(@PathVariable Long id, Model model) {
-
-        productService.delete(id);
 
         return "redirect:/";
     }

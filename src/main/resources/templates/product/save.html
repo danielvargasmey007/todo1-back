@@ -7,6 +7,12 @@
 </head>
 <body>
 	<div class="container">
+		<nav class="navbar navbar-dark bg-primary bgn">
+  			<a class="navbar-brand bgn-text" href="/">
+    			<img src="https://informacion.todo1services.com/hubfs/Todo_February2019%20/images/t1-newlogo-white.png" width="60" height="35" class="d-inline-block align-top" alt="">
+    			Kardex Todo1
+  			</a>
+		</nav>
 		<br>
 		<h2>Agregar producto</h2>
 		<form action="#" th:action="@{/save}" class="form-group" method="POST">
@@ -33,7 +39,7 @@
 				<label for="unitPrice">Precio Unitario</label>
 				<input min="1" type="number" step="any" class="form-control" id="unitPrice" name="unitPrice" th:value=${kardex.unitPrice}>
 			</div>
-			<button type="submit" class="btn btn-success">Guardar</button>
+			<button type="submit" class="btn btn-primary">Guardar</button>
 		</form>
 	</div>
 </body>
