@@ -10,4 +10,4 @@
 
 1) Acontinuación se presenta el diagrama de clases:
 	
-	![](image/entity-model)
+	![](image/entity-model.png)
