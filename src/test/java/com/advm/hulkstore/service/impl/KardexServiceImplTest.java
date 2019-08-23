@@ -48,8 +48,8 @@ public class KardexServiceImplTest {
         Long productId = new Long("123");
 
         when(kardexDAO.findByProductId(productId)).thenReturn(this.getStaticKardexForTest());
-        assertEquals(7200, kardexService.calculateNewUnitPrice(productId, 10, 22000, "Buy"), 0);
-        assertEquals(1000, kardexService.calculateNewUnitPrice(productId, 10, 22000, "Sale"), 0);
+        assertEquals(12200, kardexService.calculateNewUnitPrice(productId, 10, 22000, "Buy"), 0);
+        assertEquals(5000, kardexService.calculateNewUnitPrice(productId, 10, 22000, "Sale"), 0);
     }
 
     @Test
@@ -57,8 +57,8 @@ public class KardexServiceImplTest {
         Long productId = new Long("123");
 
         when(kardexDAO.findByProductId(productId)).thenReturn(this.getStaticKardexForTest());
-        assertEquals(200, kardexService.calculateNewStock(productId, 100, "Buy"), 0);
-        assertEquals(0, kardexService.calculateNewStock(productId, 100, "Sale"), 0);
+        assertEquals(1105, kardexService.calculateNewStock(productId, 100, "Buy"), 0);
+        assertEquals(905, kardexService.calculateNewStock(productId, 100, "Sale"), 0);
     }
 
     @Test
@@ -66,7 +66,7 @@ public class KardexServiceImplTest {
         Long productId = new Long("123");
 
         when(kardexDAO.findByProductId(productId)).thenReturn(this.getStaticKardexForTest());
-        assertEquals(this.getStaticKardexForTest().get(0).getId(), kardexService.getLastKardex(productId).getId());
+        assertEquals(this.getStaticKardexForTest().get(1).getId(), kardexService.getLastKardex(productId).getId());
     }
 
     @Test
@@ -81,6 +81,7 @@ public class KardexServiceImplTest {
         Kardex kardex1 = new Kardex();
         kardex1.setId(new Long("123"));
         kardex1.setUnitPrice(1000);
+        kardex1.setUnitPrice(2000);
         kardex1.setStock(10);
         kardex1.setStockInventory(100);
         kardex1.setTotalPriceInventory(50000);
@@ -88,6 +89,7 @@ public class KardexServiceImplTest {
         Kardex kardex2 = new Kardex();
         kardex2.setId(new Long("456"));
         kardex2.setUnitPrice(25000);
+        kardex2.setUnitPriceInventory(5000);
         kardex2.setStock(105);
         kardex2.setStockInventory(1005);
         kardex2.setTotalPriceInventory(100000);
