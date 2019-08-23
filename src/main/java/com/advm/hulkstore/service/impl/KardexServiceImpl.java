@@ -1,7 +1,6 @@
 package com.advm.hulkstore.service.impl;
 
 import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +40,7 @@ public class KardexServiceImpl extends GenericServiceImpl<Kardex, Long> implemen
             if (type.equals("Buy")) {
                 newUnitPrice = (lastKardex.getTotalPriceInventory() + totalPrice) / (stock);
             } else if (type.equals("Sale")) {
-                newUnitPrice = lastKardex.getUnitPrice();
+                newUnitPrice = lastKardex.getUnitPriceInventory();
             }
 
         }
