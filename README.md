@@ -10,4 +10,4 @@
 
 1) Acontinuación se presenta el diagrama de clases:
 	
-	![](image/_Ejemplo de diagrama entidad-relación.png?raw=true)
+	![](image/entity-model?raw=true)
