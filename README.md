@@ -13,7 +13,7 @@
 	![](image/entity-model.png)
 	
 	
-	**NOTA: ** Se debe crear manualmente una base de datos llamada **hulkstore** necesaria para la ejecución del proyecto, ya que este se conecta en el siguiente end-point y crendeciales:
+	**NOTA:** Se debe crear manualmente una base de datos llamada **hulkstore** necesaria para la ejecución del proyecto, y tenga en cuenta que el proyecto se conecta en el siguiente end-point y crendeciales:
 	
 	![](image/bd2.PNG)
 	
