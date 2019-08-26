@@ -8,9 +8,14 @@
 
 # Contenido
 
-1) Acontinuación se presenta el respectivo diagrama de clases:
+1) Los modelos en base de datos se generan automaticamente al ejecutar el proyecto por primera vez, acontinuación se presenta el respectivo diagrama de clases:
 	
 	![](image/entity-model.png)
+	
+	
+	**NOTA: ** Se debe crear manualmente una base de datos llamada **hulkstore** necesaria para la ejecución del proyecto, ya que este se conecta en el siguiente end-point y crendeciales:
+	
+	![](image/bd1.PNG)
 	
 
 2) Se toma como  base el método de promedio ponderado para el control de inventarios, vea más [aquí](https://actualicese.com/metodo-del-promedio-ponderado-para-el-control-de-inventarios/)
