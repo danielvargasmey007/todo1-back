@@ -15,7 +15,7 @@
 	
 	**NOTA: ** Se debe crear manualmente una base de datos llamada **hulkstore** necesaria para la ejecución del proyecto, ya que este se conecta en el siguiente end-point y crendeciales:
 	
-	![](image/bd1.PNG)
+	![](image/bd2.PNG)
 	
 
 2) Se toma como  base el método de promedio ponderado para el control de inventarios, vea más [aquí](https://actualicese.com/metodo-del-promedio-ponderado-para-el-control-de-inventarios/)
