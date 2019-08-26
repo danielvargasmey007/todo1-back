@@ -57,6 +57,6 @@
    Formula:	
    ![](image/calc.png)
 
-   **Precio Total Inevntario:** Corresponde al producto de **Precio Unitario Inevntario** * **Stock Inventario**
+   **Precio Total Inventario:** Corresponde al producto de **Precio Unitario Inevntario** * **Stock Inventario**
 
    **Número de Factura:** Corresponse al numero de la factura asociada a ese movimiento.
