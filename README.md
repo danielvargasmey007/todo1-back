@@ -60,3 +60,18 @@
    **Precio Total Inventario:** Corresponde al producto de **Precio Unitario Inevntario** * **Stock Inventario**
 
    **Número de Factura:** Corresponse al numero de la factura asociada a ese movimiento.
+   
+6) Para realizar la ejecución del proyecto usted puede:
+
+    **1.** Ejecutar el proyecto desde su IDE
+    **2.** Instalar [Apache Maven](https://maven.apache.org/install.html) y estando en la raiz del proyecto, ejecutar **mvn spring-boot:run**  
+	
+	**Listo**, el proyecto debe estar corriendo en http://localhost:8080/
+
+7) Para realizar la ejecución de las pruebas unitarias:
+
+    **1.** Ejecutar el proyecto desde su IDE, como ejemplo se muestra en eclipse:
+	
+	 ![](image/test.png)
+	
+    **2.** Instalar [Apache Maven](https://maven.apache.org/install.html) y estando en la raiz del proyecto, ejecutar **mvn test** 
