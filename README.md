@@ -17,6 +17,8 @@
 	
 	![](image/bd2.PNG)
 	
+	Si usted tiene difucultades con la creación de la base de datos, en la rama master le proporcinamos un script sql llamado **hulkstore.sql** que realiza la respectiva creación.
+	
 
 2) Se toma como  base el método de promedio ponderado para el control de inventarios, vea más [aquí](https://actualicese.com/metodo-del-promedio-ponderado-para-el-control-de-inventarios/)
 
